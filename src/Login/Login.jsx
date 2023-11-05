@@ -2,15 +2,18 @@
 // import useAuth from "../Hooks/useAuth";
 // import toast from "react-hot-toast";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
+import toast from "react-hot-toast";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const LogIn = () => {
 
-    // const {login,user}=useAuth()
-    // console.log(user);
-    // const navigate =useNavigate()
+    const {login,user,googleSign}=useContext(AuthContext)
+    console.log(user);
+    const navigate =useNavigate()
 
     const handelLogin = event => {
 
@@ -21,18 +24,30 @@ const LogIn = () => {
         const password = form.password.value
         const user = { email, password }
         console.log(user)
-        // login(email,password)
-        // .then(result => {
-        //   const user =result.user
-        //   console.log(user)
-        // toast.success('Logged In Success')
-        // navigate('/')
-        // })
-        // .catch(err=>{
-        //     toast.error(err.message)
-        // //   console.log(error);
-        // })
+        login(email,password)
+        .then(result => {
+          const user =result.user
+          console.log(user)
+        toast.success('Logged In Success')
+        navigate('/')
+        })
+        .catch(err=>{
+            toast.error(err.message)
+        //   console.log(error);
+        })
     }
+    const handelGoogleSignIn=()=>{
+        googleSign()
+        .then(result=>{
+          console.log(result.user)
+          navigate('/')
+          
+        })
+        .catch( error => {
+          console.error(error)
+    
+        })
+      }
     return (
         <div className="hero-content flex-col lg:flex-row">
 
@@ -57,12 +72,22 @@ const LogIn = () => {
                     </div>
                 </form>
                 <div className='py-4 space-y-5 text-bold'>
-                    <div className='flex justify-center gap-3'>
+                    {/* <div className='flex justify-center gap-3'>
                         <p className="text-center">Or Sign in with</p>
                         <div className=" text-2xl">
                             <FcGoogle></FcGoogle>
                         </div>
-                    </div>
+                    </div> */}
+                     <div className="  mb-3">
+                  <div className=" text-center gap-2 ">
+                    
+                    <button onClick={handelGoogleSignIn} className="btn w-80  text-black"> <FcGoogle></FcGoogle>Login  with Google</button>
+                  </div>
+                
+                 
+                 
+                </div>
+                
 
                     <h2 className='text-center  mb-3'>New here? <Link to='/register' className='text-lime-600'>Sign Up</Link></h2>
                 </div>

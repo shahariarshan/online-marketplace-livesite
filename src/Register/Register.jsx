@@ -1,35 +1,39 @@
 
-// import { Link, useNavigate } from "react-router-dom"
-import { Link } from "react-router-dom";
-// import useAuth from "../Hooks/useAuth";
-// import toast from "react-hot-toast";
+
+import { useContext } from "react";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+
+
+
 
 
 const Register = () => {
-   
-    // const {createUser,user}=useAuth()
+    const {createUser,updateUser}=useContext(AuthContext)
     // console.log(user);
-    // const navigate =useNavigate()
+    const navigate =useNavigate()
     const handelRegister =event=>{
         event.preventDefault()
         const form = event.target
-        const Name=form.LastName.value
+        const name=form.name.value
         const email=form.email.value
         const password=form.password.value
-        const url=form.url.value
-        const user={Name,email,url,password}
+        const photo=form.photo.value
+        const user={name,email,photo,password}
         console.log(user)
-        // createUser(email,password)
-        // .then(result => {
-        //   const user =result.user
-        //   console.log(user)
-        //   toast.success('Registration Successful')
-        // navigate('/')
-        // })
-        // .catch(err=>{
-        // //   console.log(error);
-        // toast.error(err.message)
-        // })
+        createUser(email,password)
+        .then(result => {
+          const user =result.user
+          console.log(user)
+          updateUser(name,photo)
+          toast.success('Registration Successful')
+        navigate('/')
+        })
+        .catch(err=>{
+        //   console.log(error);
+        toast.error(err.message)
+        })
     }
 
     return (
@@ -46,7 +50,7 @@ const Register = () => {
                 </label>
                 <input type="text" 
                  placeholder="Name" 
-                 name="LastName"
+                 name="name"
                  className="input input-bordered"
                  
                  required />
