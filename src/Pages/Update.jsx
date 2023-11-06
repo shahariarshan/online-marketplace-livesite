@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+// import { Link, useLoaderData } from "react-router-dom";
 // import { FaBackward } from 'react-icons/fa';
 // import Swal from "sweetalert2";
 
@@ -6,13 +6,14 @@
 
 
 
-// const AddJobs = () => {
+// const Update = () => {
 
 //     const handelUpdateJob = event => {
+//         const loadData = useLoaderData();
+//     console.log(loadData);
+//     const  { email, title, data, category, miniPrice, maxPrice, description} =loadData
 //         event.preventDefault();
-
 //         const form = event.target;
-
 //         const email = form.email.value;
 //         const title = form.title.value;
 //         const data = form.data.value;
@@ -21,13 +22,13 @@
 //         const maxPrice = form.maxPrice.value;
 //         const description = form.description.value;
 
-//         const infoJob = { email, title, data, category, miniPrice, maxPrice, description}
-//         console.log(infoJob)
+//         const updateJobDetails = { email, title, data, category, miniPrice, maxPrice, description}
+//         console.log(updateJobDetails)
 
         
 
-//         fetch('http://localhost:5000/allJobs', {
-//             method: "POST",
+//         fetch(`http://localhost:5000/allJobs/allJobs/${_id}`, {
+//             method: "PUT",
 //             headers: {
 //                 'content-type': 'application/json'
 //             },
@@ -95,7 +96,8 @@
 //                                 <span className="label-text">Deadline</span>
 //                             </label>
 //                             <label className="input-group">
-//                                 <input type="date" name="data" className="input input-bordered w-full" />
+//                                 <input type="date" name="data" 
+//                                  defaultValue={data} className="input input-bordered w-full" />
 //                             </label>
 //                         </div>
 //                         <div className="form-control md:w-1/2 lg:ml-4 mt-9">
@@ -108,7 +110,7 @@
 //                                 <option>Digital Marketing</option>
 //                                 <option>Graphics Design</option>
 //                                 <label className="input-group">
-//                                 <input type="text" name="category" className="input input-bordered w-full" />
+//                                 <input type="text" name="category"  defaultValue={category} className="input input-bordered w-full" />
 //                             </label>
 //                             </select>
 //                         </div>
@@ -124,7 +126,7 @@
 //                                 <span className="label-text">Minimum Price</span>
 //                             </label>
 //                             <label className="input-group">
-//                                 <input type="number" name="miniPrice" placeholder="Minimum Price" className="input input-bordered w-full" />
+//                                 <input type="number" name="miniPrice"  defaultValue={miniPrice} placeholder="Minimum Price" className="input input-bordered w-full" />
 //                             </label>
 //                         </div>
 //                         <div className="form-control md:w-1/2 lg:ml-4">
@@ -132,7 +134,7 @@
 //                                 <span className="label-text">Maximum Price</span>
 //                             </label>
 //                             <label className="input-group">
-//                                 <input type="number" name="maxPrice" placeholder="Max-Price" className="input input-bordered w-full" />
+//                                 <input type="number" name="maxPrice" defaultValue={maxPrice} placeholder="Max-Price" className="input input-bordered w-full" />
 //                             </label>
 //                         </div>
 
@@ -145,7 +147,7 @@
 //                             <span className="label-text">Description</span>
 //                         </label>
 //                         <label className="input-group">
-//                             <input type="text" name="description" placeholder="Description" className="input input-bordered w-full" />
+//                             <input type="text" name="description" defaultValue={description} placeholder="Description" className="input input-bordered w-full" />
 //                         </label>
 //                     </div>
 //                     <input type="submit" value="Add This job" className="btn bg-lime-700 w-full mt-5" />
@@ -156,4 +158,4 @@
 //     );
 // };
 
-// export default AddJobs;
+// export default Update;

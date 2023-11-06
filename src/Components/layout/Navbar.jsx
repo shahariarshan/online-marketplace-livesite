@@ -34,7 +34,7 @@ const Navbar = () => {
               {/* Navbar menu content here */}
               <NavLink to='/' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm mr-2' : 'btn-sm btn-ghost'}>Home</NavLink>
               <NavLink to='/addJob' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm mr-2' : 'btn-sm btn-ghost'}>Add Jobs</NavLink>
-              <NavLink to='/category/category' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>My Posted Jobs</NavLink>
+              <NavLink to='/postedJob/:id' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>My Posted Jobs</NavLink>
               <NavLink to='/myBids' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>My Bids</NavLink>
               <NavLink to='/bid' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>Bid Request</NavLink>
 
