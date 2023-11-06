@@ -1,19 +1,24 @@
 
 import { Outlet } from 'react-router-dom'
-import MainLayOut from './Components/layout/MainLayOut'
+
+import Navbar from './Components/layout/Navbar'
+import Footer from './Pages/Footer'
 
 function App() {
-  
+
 
   return (
     <>
-       <>
-      
-      <MainLayOut>
-        <Outlet></Outlet>
-      </MainLayOut>
+      <>
+
         
-    </>
+        <div className="mx-auto container">
+        <Navbar></Navbar>
+        <Outlet></Outlet>
+        <Footer></Footer>
+
+        </div>
+      </>
     </>
   )
 }

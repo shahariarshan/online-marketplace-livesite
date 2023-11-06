@@ -1,30 +1,30 @@
+// import Categories from "../../../Pages/Categories";
+
+import { Link } from "react-router-dom";
+import Category from "../../../../public/category.json"
 
 
 
 
 const Banner = () => {
+
+  
   return (
    <div >
-   
-   <div className="mt-5 mx-auto container  ">
-   <ul className="flex lg:justify-evenly gap-2">
-  <button className="btn btn-accent btn-sm">
-    Web Development
-  </button>
-  <button className="btn btn-accent btn-sm">
-    Digital Marketing
-  </button>
-  <button className="btn btn-accent btn-sm">
-    Graphics Design
-  </button>
-</ul>
-   </div>
+
+
+<div className="mx-auto lg:flex mt-3 justify-evenly">
+{
+  Category.map((element,idx)=> < Link to={`/category/${element.category}`} key={idx} className="btn">{element.category}</Link >)
+}
+</div>
+  
 <div className="hero min-h-screen mt-5" style={{backgroundImage: 'url(https://i.ibb.co/3Y93ybT/b1.webp)'}}>
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-center text-neutral-content">
-    <div className="max-w-md">
-      <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+    <div className="">
+      <h1 className="mb-5 text-5xl font-bold">Your Ultimate Online Shopping Destination</h1>
+      <p className="mb-5">Connect buyers, sellers; diverse products; seamless transactions; convenient shopping experience online.</p>
       
     </div>
   </div>

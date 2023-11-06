@@ -4,7 +4,7 @@
 
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
@@ -16,10 +16,8 @@ const LogIn = () => {
     const navigate =useNavigate()
 
     const handelLogin = event => {
-
         event.preventDefault()
         const form = event.target
-
         const email = form.email.value
         const password = form.password.value
         const user = { email, password }
@@ -50,7 +48,7 @@ const LogIn = () => {
       }
     return (
         <div className="hero-content flex-col lg:flex-row">
-
+<div><Toaster/></div>
             <div className="card lg:w-1/2 flex-shrink-0 max-w-sm shadow-2xl rounded-xl  bg-orange-200 hover:bg-orange-400 active:bg-violet-700s">
                 <form onSubmit={handelLogin} className="card-body space-y-6">
                     <h2 className="text-center font-bold text-5xl font-serif text-sky-700">Login!!</h2>

@@ -4,6 +4,7 @@ import app from "../config/Firebase.config";
 
 
 
+
 export const AuthContext =createContext();
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
@@ -30,6 +31,7 @@ const AuthProvider = ({children}) => {
 
             .then(result => {
                 console.log(result.user)
+               
             })
             .catch(error => {
                 console.error(error)

@@ -1,7 +1,7 @@
 
 
 import { useContext } from "react";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
@@ -43,7 +43,7 @@ const Register = () => {
           <div className="card lg:w-1/2 flex-shrink-0  max-w-sm shadow-2xl  bg-green-100">
             <form  onSubmit={handelRegister} className="card-body space-y-6">
               <h2 className="text-center font-bold ">Register Now</h2>
-              
+              <div><Toaster/></div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-semibold">Name</span>

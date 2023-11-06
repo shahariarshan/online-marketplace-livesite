@@ -16,12 +16,13 @@ const AddJobs = () => {
         const email = form.email.value;
         const title = form.title.value;
         const data = form.data.value;
-        const category = form.category.value;
+        const category = form.type.value;
         const miniPrice = form.miniPrice.value;
-        const maxiPrice = form.maxiPrice.value;
+        const maxPrice = form.maxPrice.value;
         const description = form.description.value;
 
-        const infoJob = { email, title, data, category, miniPrice, maxiPrice, description}
+        const infoJob = { email, title, data, category, miniPrice, maxPrice, description}
+        console.log(infoJob)
 
         
 
@@ -52,12 +53,12 @@ const AddJobs = () => {
     return (
 
 
-        <div className="bg-stone-500  lg:p-12">
+        <div className="  lg:p-12">
             <div className=" p-7 ">
 
-                <Link to='/' className="flex btn btn-secondary">
+                <Link to='/' className=" btn btn-secondary mx-auto">
                     <FaBackward className="text-2xl text-black"></FaBackward>
-                    <span className="text-orange-400 font-serif text-xl ml-3">Go to home</span>
+                    <span className="text-orange-400 font-serif text-xl ml-3"> Home</span>
                 </Link>
 
 
@@ -70,7 +71,7 @@ const AddJobs = () => {
                                 <span className="label-text">Email of the employer</span>
                             </label>
                             <label className="input-group">
-                                <input type="email" name="name" placeholder="Your Email" className="input input-bordered w-full" />
+                                <input type="email" name="email" placeholder="Your Email" className="input input-bordered w-full" />
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 lg:ml-4">
@@ -94,19 +95,16 @@ const AddJobs = () => {
                                 <input type="date" name="data" className="input input-bordered w-full" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 lg:ml-4 mt-9">
-                            <select className="select select-bordered w-full ">
+                        <div className="form-control md:w-1/2 lg:ml-4 ">
                                 <label className="label">
-                                    <option disabled selected>Select your Job Category</option>
-                                    <span className="label-text"></span>
+                                <span className="label-text">Select your Job Category</span>
                                 </label>
-                                <option>Web Development</option>
-                                <option>Digital Marketing</option>
-                                <option>Graphics Design</option>
-                                <label className="input-group">
-                                <input type="text" name="category" className="input input-bordered w-full" />
-                            </label>
+                            <select name="type" className="select select-bordered w-full ">
+                                <option value={`Web Development`}>Web Development</option>
+                                <option value={`Digital Marketing`}>Digital Marketing</option>
+                                <option value={`Graphic Design`}>Graphic Design</option>
                             </select>
+                           
                         </div>
 
 
@@ -128,7 +126,7 @@ const AddJobs = () => {
                                 <span className="label-text">Maximum Price</span>
                             </label>
                             <label className="input-group">
-                                <input type="number" name="maxiPrice" placeholder="Max-Price" className="input input-bordered w-full" />
+                                <input type="number" name="maxPrice" placeholder="Max-Price" className="input input-bordered w-full" />
                             </label>
                         </div>
 

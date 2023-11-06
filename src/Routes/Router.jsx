@@ -5,9 +5,9 @@ import LogIn from "../Login/Login";
 import Register from "../Register/Register";
 import AddJobs from "../Pages/AddJobs";
 import ErrorPage from "../Pages/ErrorPage";
-import Card from "../Pages/Card";
+import Cards from "../Pages/Cards";
 
-
+import MyPostedJobs from "../Pages/MyPostedJobs";
 
 const routes = createBrowserRouter ([
     {
@@ -18,7 +18,6 @@ const routes = createBrowserRouter ([
             {
                 path:'/',
                 element:<MainLayOut></MainLayOut>,
-                loader:()=>fetch('/category.json')
                 
             },
             {
@@ -26,10 +25,25 @@ const routes = createBrowserRouter ([
                 element:<AddJobs></AddJobs>
             },
             {
-                path:'/category/:type',
-                element:<Card></Card>,
-                loader:()=>fetch(`http://localhost:5000/allJobs`),
-              },
+                path:'/category/:category',
+                element:<Cards></Cards>,
+                loader:()=>fetch('http://localhost:5000/allJobs')
+            },
+            {
+                path:'/category/:_id',
+                element:<MyPostedJobs></MyPostedJobs>,
+                loader:()=>fetch('http://localhost:5000/allJobs')
+            },
+            // {
+            //     path : `/category/:category/:id`,
+            //     element : <JobDetails></JobDetails>
+            // }
+            // {
+            //     path:'jobDetails/:id',
+            //     element:<JobDetails></JobDetails>,
+            //     loader:({params})=>fetch(`http://localhost:5000/allJobs${params.id}`)
+            // }
+
             
            
        ]
