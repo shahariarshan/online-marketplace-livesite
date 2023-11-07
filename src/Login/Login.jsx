@@ -27,6 +27,8 @@ const LogIn = () => {
           const user =result.user
           console.log(user)
         toast.success('Logged In Success')
+        event.target.reset()
+        
         navigate('/')
         })
         .catch(err=>{
