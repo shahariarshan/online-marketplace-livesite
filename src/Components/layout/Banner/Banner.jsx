@@ -1,7 +1,9 @@
 // import Categories from "../../../Pages/Categories";
 
-import { Link } from "react-router-dom";
-import Category from "../../../../public/category.json"
+import WebBase from "../../../Pages/webBase";
+
+// import { Link } from "react-router-dom";
+// import Category from "../../../../public/category.json"
 
 
 
@@ -13,11 +15,12 @@ const Banner = () => {
    <div >
 
 
-<div className="mx-auto lg:flex mt-3 justify-evenly">
+{/* <div className="mx-auto lg:flex mt-3 justify-evenly">
 {
   Category.map((element,idx)=> < Link to={`/category/${element.category}`} key={idx} className="btn">{element.category}</Link >)
 }
-</div>
+</div> */}
+<WebBase></WebBase>
   
 <div className="hero min-h-screen mt-5" style={{backgroundImage: 'url(https://i.ibb.co/3Y93ybT/b1.webp)'}}>
   <div className="hero-overlay bg-opacity-60"></div>

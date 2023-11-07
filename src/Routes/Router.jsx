@@ -7,8 +7,12 @@ import AddJobs from "../Pages/AddJobs";
 import ErrorPage from "../Pages/ErrorPage";
 import Cards from "../Pages/Cards";
 
-// import MyPostedJobs from "../Pages/MyPostedJobs";
-// import Update from "../Pages/Update";
+import MyPostedJobs from "../Pages/MyPostedJobs";
+import Update from "../Pages/Update";
+import JobDetails from "../Pages/JobDetails";
+import PrivateRoute from "./PrivateRoute";
+
+
 
 const routes = createBrowserRouter([
     {
@@ -21,30 +25,31 @@ const routes = createBrowserRouter([
                 element: <MainLayOut></MainLayOut>,
 
             },
+
             {
                 path: '/addJob',
-                element: <AddJobs></AddJobs>
+                element: <PrivateRoute><AddJobs></AddJobs></PrivateRoute>
             },
             {
                 path: '/category/:category',
-                element: <Cards></Cards>,
+                element:<PrivateRoute> <Cards></Cards></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/allJobs')
             },
-            // {
-            //     path: '/category/:id',
-            //     element: <MyPostedJobs></MyPostedJobs>,
-            //     loader: () => fetch('http://localhost:5000/allJobs')
-            // },
-            // {
-            //     path: '/update/:id',
-            //     element: <Update></Update>,
-            //     loader: ({ params }) => fetch(`http://localhost:5000/alljobs/${params.id}`)
-            // },
-            // {
-            //     path:'jobDetails/:id',
-            //     element:<JobDetails></JobDetails>,
-            //     loader:({params})=>fetch(`http://localhost:5000/allJobs${params.id}`)
-            // }
+            {
+                path: '/category',
+                element: <PrivateRoute><MyPostedJobs></MyPostedJobs></PrivateRoute>,
+                loader: () => fetch('http://localhost:5000/allJobs')
+            },
+            {
+                path:'update/:id',
+                element:<PrivateRoute><Update></Update></PrivateRoute>,
+                loader:({params})=>fetch(`http://localhost:5000/allJobs${params.id}`)
+            },
+            {
+                path:'/jobDetails/:id',
+                element:<JobDetails></JobDetails>,
+                loader:({params})=>fetch(`http://localhost:5000/allJobs${params.id}`)
+            }
 
 
 

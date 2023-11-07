@@ -1,14 +1,25 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+
 
 
 const JobDetails = () => {
-    // const { type, jobTitle, deadline, priceRange, shortDescription } = useParams()
-    // const data = useLoaderData()
+    const details = useLoaderData()
+    console.log(details);
     return (
-      
-<div>
-    <h1>hello</h1>
-</div>
+
+        <div>
+            <div className="card w-96 bg-primary text-primary-content">
+                <div className="card-body">
+                    <h2 className="card-title">{details.length}</h2>
+                    {/* <p>{description}</p> */}
+                    <div className="card-actions justify-end">
+                        <button className="btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     );
 };
 

@@ -1,4 +1,4 @@
-import { NavLink, useLoaderData, useParams } from "react-router-dom";
+import { Link,  useLoaderData, useParams } from "react-router-dom";
 
 
 const Cards = () => {
@@ -35,9 +35,9 @@ const Cards = () => {
                                 </div>
                                 <div className="card-actions justify-center mt-2">
                                     
-                                    <NavLink to={`/category/${item.category}/${item._id}`}>
+                                    <Link to={`/jobDetails/${item.category}`}>
                                         <button className="btn btn-neutral ">Bid Now</button>
-                                    </NavLink>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
