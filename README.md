@@ -16,3 +16,7 @@ this project is about Online Maketplace where we add some features which are giv
 3:When user loged in after register or if user have already an account they can see all items
 4: user can update jobs and owner can access that.
 5.If user bid on form button it will insert on bid section.Items all are come from MongoDb 
+
+
+
+live Link : https://online-marketplace-45fca.web.app/
