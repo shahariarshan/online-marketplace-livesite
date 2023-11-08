@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from "../config/Firebase.config";
+import axios from "axios";
 
 
 
@@ -50,7 +51,21 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         const subscribe =onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
+            const userEmail =currentUser?.email || user?.email;
+            const loogedUser ={email:userEmail}
         setIsLoading(false)
+        if(currentUser){
+            axios.post( 'https://online-marketplace-server-side.vercel.app/jwt',loogedUser, {withCredentials:true})
+            .then(res=>{
+                console.log(res.data);
+            })
+        }
+        else{
+            axios.post('https://online-marketplace-server-side.vercel.app/logout',loogedUser,{withCredentials:true})
+            .then(res=>{
+                console.log(res.data);
+            })
+        }
         });
 
         return()=>{
