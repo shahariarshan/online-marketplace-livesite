@@ -33,7 +33,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/category/:category',
-                element:<PrivateRoute> <Cards></Cards></PrivateRoute>,
+                element: <Cards></Cards>,
                 loader: () => fetch('http://localhost:5000/allJobs')
             },
             {
@@ -48,12 +48,12 @@ const routes = createBrowserRouter([
             },
             {
                 path:'/jobDetails/:id',
-                element:<JobDetails></JobDetails>,
+                element:<PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/allJobs/${params.id}`)
             },
             {
                 path:'/myBids',
-                element:<MyBids></MyBids>,
+                element:<PrivateRoute><MyBids></MyBids></PrivateRoute>,
                 loader:()=>fetch('http://localhost:5000/placeBid')
             }
 

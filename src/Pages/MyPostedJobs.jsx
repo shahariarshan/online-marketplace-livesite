@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -50,6 +51,11 @@ const MyPostedJobs = () => {
 
     return (
         <div className="card  ">
+             <Helmet>
+    <title>
+      Online Marketplace| My Posted Jobs
+    </title>
+  </Helmet>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-10">
                 {

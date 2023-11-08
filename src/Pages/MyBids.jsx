@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 
 
@@ -8,7 +9,11 @@ const MyBids = () => {
     return (
         <div>
 
-
+<Helmet>
+    <title>
+      Online Marketplace| My Bids
+    </title>
+  </Helmet>
 
             <div className="overflow-x-auto mt-5">
                 <table className="table table-zebra">

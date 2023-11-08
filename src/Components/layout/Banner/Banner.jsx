@@ -1,5 +1,6 @@
 // import Categories from "../../../Pages/Categories";
 
+import { Helmet } from "react-helmet-async";
 import WebBase from "../../../Pages/webBase";
 
 
@@ -7,12 +8,12 @@ const Banner = () => {
 
 
   return (
-    <div >
-
-
-
-     
-
+    <div  className="mt-5">
+      <Helmet>
+    <title>
+      Online Marketplace|| Home
+    </title>
+  </Helmet>
 
       <div className="carousel w-full h-[600px]">
       <div id="slide1" className="carousel-item relative w-full">

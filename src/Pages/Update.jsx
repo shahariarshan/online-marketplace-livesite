@@ -2,9 +2,15 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 const Update = () => {
+    <Helmet>
+    <title>
+      Online Marketplace || Update
+    </title>
+  </Helmet>
     const {user} =useContext(AuthContext)
     const mail =user?.email
     const loder =useLoaderData()

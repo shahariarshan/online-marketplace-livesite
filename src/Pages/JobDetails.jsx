@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import toast, { Toaster } from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -50,6 +51,11 @@ const JobDetails = () => {
   position="top-right"
   reverseOrder={false}
 />
+<Helmet>
+    <title>
+      Online Marketplace| Details
+    </title>
+  </Helmet>
             <div className="card bg-slate-400 shadow-2xl">
                 <div className="card-body">
                     <h2 className="text-2xl text-red-500 text-center font-mono">{details.title}</h2>

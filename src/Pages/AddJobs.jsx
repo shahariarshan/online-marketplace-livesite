@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import { FaBackward } from 'react-icons/fa';
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 
 
 
 const AddJobs = () => {
+
 
     const handelAddJob = event => {
         event.preventDefault();
@@ -21,10 +23,10 @@ const AddJobs = () => {
         const maxPrice = form.maxPrice.value;
         const description = form.description.value;
 
-        const infoJob = { email, title, data, category, miniPrice, maxPrice, description}
+        const infoJob = { email, title, data, category, miniPrice, maxPrice, description }
         console.log(infoJob)
 
-        
+
 
         fetch('http://localhost:5000/allJobs', {
             method: "POST",
@@ -36,14 +38,14 @@ const AddJobs = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if(data.insertedId
-                    ){
-                        Swal.fire({
-                            title: 'Job add Success!',
-                            text: 'Want to add job',
-                            icon: 'success',
-                            confirmButtonText: 'Great '
-                          })
+                if (data.insertedId
+                ) {
+                    Swal.fire({
+                        title: 'Job add Success!',
+                        text: 'Want to add job',
+                        icon: 'success',
+                        confirmButtonText: 'Great '
+                    })
 
                 }
             })
@@ -51,11 +53,16 @@ const AddJobs = () => {
 
     }
 
-    
+
     return (
 
 
         <div className="  lg:p-12">
+            <Helmet>
+                <title>
+                    Online Marketplace|| Add Jobs
+                </title>
+            </Helmet>
             <div className=" p-7 ">
 
                 <Link to='/' className=" btn btn-secondary mx-auto">
@@ -98,15 +105,15 @@ const AddJobs = () => {
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 lg:ml-4 ">
-                                <label className="label">
+                            <label className="label">
                                 <span className="label-text">Select your Job Category</span>
-                                </label>
+                            </label>
                             <select name="type" className="select select-bordered w-full ">
                                 <option value={`Web Development`}>Web Development</option>
                                 <option value={`Digital Marketing`}>Digital Marketing</option>
                                 <option value={`Graphic Design`}>Graphic Design</option>
                             </select>
-                           
+
                         </div>
 
 
