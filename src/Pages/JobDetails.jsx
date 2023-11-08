@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-import Swal from "sweetalert2";
 import toast, { Toaster } from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
 
@@ -11,7 +10,7 @@ const JobDetails = () => {
     const details = useLoaderData()
     const {user} =useContext(AuthContext)
     console.log(details,user);
-    const {_id,email,title,  miniPrice, maxPrice} =details;
+    const {email,title,  miniPrice, maxPrice} =details;
     const handelPlaceJob = event => {
         event.preventDefault();
 
