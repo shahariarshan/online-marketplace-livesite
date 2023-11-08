@@ -70,8 +70,7 @@ const Navbar = () => {
               }
 
 
-              {/* <NavLink to='/register' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>Register</NavLink> */}
-
+             
             </ul>
           </div>
         </div>
