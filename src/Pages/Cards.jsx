@@ -35,7 +35,7 @@ const Cards = () => {
                                 </div>
                                 <div className="card-actions justify-center mt-2">
                                     
-                                    <Link to={`/jobDetails/${item.category}`}>
+                                    <Link to={`/jobDetails/${item._id}`}>
                                         <button className="btn btn-neutral ">Bid Now</button>
                                     </Link>
                                 </div>

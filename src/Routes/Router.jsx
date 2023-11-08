@@ -11,6 +11,7 @@ import MyPostedJobs from "../Pages/MyPostedJobs";
 import Update from "../Pages/Update";
 import JobDetails from "../Pages/JobDetails";
 import PrivateRoute from "./PrivateRoute";
+import MyBids from "../Pages/MyBids";
 
 
 
@@ -42,13 +43,18 @@ const routes = createBrowserRouter([
             },
             {
                 path:'update/:id',
-                element:<PrivateRoute><Update></Update></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/allJobs${params.id}`)
+                element:<Update></Update>,
+                loader:({params})=>fetch(`http://localhost:5000/allJobs/${params.id}`)
             },
             {
                 path:'/jobDetails/:id',
                 element:<JobDetails></JobDetails>,
-                loader:({params})=>fetch(`http://localhost:5000/allJobs${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/allJobs/${params.id}`)
+            },
+            {
+                path:'/myBids',
+                element:<MyBids></MyBids>,
+                loader:()=>fetch('http://localhost:5000/placeBid')
             }
 
 

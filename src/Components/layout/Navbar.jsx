@@ -36,7 +36,7 @@ const Navbar = () => {
               <NavLink to='/addJob' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm mr-2' : 'btn-sm btn-ghost'}>Add Jobs</NavLink>
               <NavLink to='/category' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>My Posted Jobs</NavLink>
               <NavLink to='/myBids' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>My Bids</NavLink>
-              <NavLink to='/bid' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>Bid Request</NavLink>
+              <NavLink  className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>Bid Request</NavLink>
 
               {
                 user ?
@@ -83,7 +83,7 @@ const Navbar = () => {
             {
               user ?
                 <>
-                  <div className="dropdown dropdown-bottom lg:dropdown-end">
+                  <div className="dropdown dropdown-bottom overflow-hidden lg:dropdown-end">
                     <label tabIndex={0} className="btn">Profile</label>
                     <ul tabIndex={0} className="dropdown-content z-[1] card card-compact w-28 p-2 shadow bg-primary text-primary-content">
                       <div >

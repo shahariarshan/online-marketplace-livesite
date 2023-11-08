@@ -2,7 +2,7 @@
 // import useAuth from "../Hooks/useAuth";
 // import toast from "react-hot-toast";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
 import toast, { Toaster } from "react-hot-toast";
 import { useContext } from "react";
@@ -14,6 +14,7 @@ const LogIn = () => {
     const {login,user,googleSign}=useContext(AuthContext)
     console.log(user);
     const navigate =useNavigate()
+    const location =useLocation()
 
     const handelLogin = event => {
         event.preventDefault()
@@ -29,7 +30,7 @@ const LogIn = () => {
         toast.success('Logged In Success')
         event.target.reset()
         
-        navigate('/')
+        navigate(location?.state? location.state:'/')
         })
         .catch(err=>{
             toast.error(err.message)
@@ -40,7 +41,7 @@ const LogIn = () => {
         googleSign()
         .then(result=>{
           console.log(result.user)
-          navigate('/')
+          navigate(location?.state? location.state:'/')
           
         })
         .catch( error => {

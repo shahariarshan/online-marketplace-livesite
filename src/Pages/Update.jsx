@@ -1,12 +1,12 @@
-// import { useContext } from "react";
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-// import { AuthContext } from "../Provider/AuthProvider";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Update = () => {
-    // const {user} =useContext(AuthContext)
-    // const mail =user?.email
+    const {user} =useContext(AuthContext)
+    const mail =user?.email
     const loder =useLoaderData()
     console.log(loder);
     const {_id,email, title, data, type, miniPrice, maxPrice, description} =loder
@@ -14,7 +14,6 @@ const Update = () => {
         event.preventDefault();
 
         const form = event.target;
-
         const email = form.email.value;
         const title = form.title.value;
         const data = form.data.value;
@@ -23,7 +22,7 @@ const Update = () => {
         const maxPrice = form.maxPrice.value;
         const description = form.description.value;
 
-        const updateCategory = { email,title,data,type,miniPrice,maxPrice,description}
+        const updateCategory = {mail, email,title,data,type,miniPrice,maxPrice,description}
         console.log(updateCategory)
 
         
@@ -71,7 +70,7 @@ const Update = () => {
                                 <span className="label-text">Email of the employer</span>
                             </label>
                             <label className="input-group">
-                                <input type="email" name="email" defaultValue={email} placeholder="Your Email" className="input input-bordered w-full" />
+                                <input type="email" name="email" defaultValue={email} readOnly placeholder="Your Email" className="input input-bordered w-full" />
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 lg:ml-4">

@@ -2,37 +2,96 @@
 
 import WebBase from "../../../Pages/webBase";
 
-// import { Link } from "react-router-dom";
-// import Category from "../../../../public/category.json"
-
-
-
 
 const Banner = () => {
 
-  
+
   return (
-   <div >
+    <div >
 
 
-{/* <div className="mx-auto lg:flex mt-3 justify-evenly">
-{
-  Category.map((element,idx)=> < Link to={`/category/${element.category}`} key={idx} className="btn">{element.category}</Link >)
-}
-</div> */}
-<WebBase></WebBase>
+
+     
+
+
+      <div className="carousel w-full h-[600px]">
+      <div id="slide1" className="carousel-item relative w-full">
+        <img src="https://i.ibb.co/B6hZr7F/b3.png" className="w-full rounded-xl" />
+        <div className="absolute h-full flex rounded-xl  left-0 top-0 items-center text-white 
+    bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] ">
+          <div className="pl-5  space-y-7">
+            <h2 className="text-6xl font-bold">Your Ultimate Online Shopping Destination</h2>
+            <p className="text-center">Connect buyers, sellers; diverse products; seamless transactions; convenient shopping experience online.</p>
+            <div className="">
+             <WebBase></WebBase>
+            </div>
+          </div>
+        </div>
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 ">
+          <a href="#slide4" className="btn btn-circle bg-red-500 mr-5">❮</a>
+          <a href="#slide2" className="btn btn-circle bg-red-500 mr-5">❯</a>
+        </div>
+      </div>
+      <div id="slide2" className="carousel-item relative w-full">
+        <img src="https://i.ibb.co/wsTntMZ/b1.webp" className="w-full rounded-xl" />
+        <div className="absolute h-full flex  left-0 top-0 rounded-xl items-center text-white 
+    bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] ">
+          <div className="pl-5  space-y-7">
+            <h2 className="text-6xl font-bold">Your Ultimate Online Shopping Destination</h2>
+            <p className="text-center">Connect buyers, sellers; diverse products; seamless transactions; convenient shopping experience online.</p>
+            <div className="mx-auto justify-evenly">
+             <WebBase></WebBase>
+            </div>
+          </div>
+        </div>
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide1" className="btn btn-circle bg-red-500 mr-5">❮</a>
+          <a href="#slide3" className="btn btn-circle bg-red-500 mr-5">❯</a>
+        </div>
+      </div>
+      <div id="slide3" className="carousel-item relative w-full">
+        <img src="https://i.ibb.co/DLFWR6Z/b2.png" className="w-full rounded-xl" />
+        <div className="absolute h-full flex  left-0 rounded-xl top-0 items-center text-white 
+    bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] ">
+          <div className="pl-5  space-y-7">
+            <h2 className="text-6xl font-bold">Your Ultimate Online Shopping Destination</h2>
+            <p className="text-center">Connect buyers, sellers; diverse products; seamless transactions; convenient shopping experience online.</p>
+            <div className="mx-auto justify-evenly">
+             <WebBase></WebBase>
+            </div>
+          </div>
+        </div>
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide2" className="btn btn-circle bg-red-500  mr-5">❮</a>
+          <a href="#slide4" className="btn btn-circle bg-red-500 mr-5">❯</a>
+        </div>
+      </div>
+      <div id="slide4" className="carousel-item relative w-full">
+        <img src="https://i.ibb.co/5ry142k/laptop-shopping-bags-online-shopping-concept.jpg" className="w-full rounded-xl" />
+        <div className="absolute h-full flex  left-0 top-0 rounded-xl items-center text-white 
+    bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] ">
+          <div className="pl-5  space-y-7">
+            <h2 className="text-6xl font-bold">Your Ultimate Online Shopping Destination</h2>
+            <p className="text-center ">Connect buyers, sellers; diverse products; seamless transactions; convenient shopping experience online.</p>
+            <div className="mx-auto justify-evenly">
+             <WebBase></WebBase>
+            </div>
+          </div>
+        </div>
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <a href="#slide3" className="btn btn-circle bg-red-500  mr-5">❮</a>
+          <a href="#slide1" className="btn btn-circle bg-red-500 mr-5">❯</a>
+        </div>
+      </div>
+     
   
-<div className="hero min-h-screen mt-5" style={{backgroundImage: 'url(https://i.ibb.co/3Y93ybT/b1.webp)'}}>
-  <div className="hero-overlay bg-opacity-60"></div>
-  <div className="hero-content text-center text-neutral-content">
-    <div className="">
-      <h1 className="mb-5 text-5xl font-bold">Your Ultimate Online Shopping Destination</h1>
-      <p className="mb-5">Connect buyers, sellers; diverse products; seamless transactions; convenient shopping experience online.</p>
-      
     </div>
-  </div>
-</div>
-   </div>
+
+
+
+
+     
+    </div>
   );
 };
 
