@@ -64,9 +64,6 @@ const Update = () => {
 
         <div className="  lg:p-12">
             <div className=" p-7 ">
-
-              
-
                 <h2 className="text-3xl font-extrabold text-center mt-5">Update Your Job</h2>
                 <form onSubmit={handelUpdateJob} className="mt-5" >
 
@@ -149,7 +146,7 @@ const Update = () => {
                             <input type="text" name="description" defaultValue={description} placeholder="Description" className="input input-bordered w-full" />
                         </label>
                     </div>
-                    <input type="submit" value="Add This job" className="btn bg-lime-700 w-full mt-5" />
+                    <input type="submit" value="Update This job" className="btn bg-lime-700 w-full mt-5" />
 
                 </form>
             </div>

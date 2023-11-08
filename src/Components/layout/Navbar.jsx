@@ -38,7 +38,7 @@ const Navbar = () => {
                 <NavLink to='/addJob' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm mr-2' : 'btn-sm btn-ghost'}>Add Jobs</NavLink>
               <NavLink to='/category' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>My Posted Jobs</NavLink>
               <NavLink to='/myBids' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>My Bids</NavLink>
-              <NavLink  className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>Bid Request</NavLink>
+              <NavLink  to='/bidRequest' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>Bid Request</NavLink>
                 </>:
                  <Link to='/register'>
                  <button className="btn btn-primary btn-sm  mr-2">Register</button>
@@ -89,7 +89,7 @@ const Navbar = () => {
                 <NavLink to='/addJob' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm mr-2' : 'btn-sm btn-ghost'}>Add Jobs</NavLink>
               <NavLink to='/category' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>My Posted Jobs</NavLink>
               <NavLink to='/myBids' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>My Bids</NavLink>
-              <NavLink  className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>Bid Request</NavLink>
+              <NavLink to='/bidRequest' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>Bid Request</NavLink>
                 </>:
                  <Link to='/register'>
                  <button className="btn btn-primary btn-sm  mr-2">Register</button>
