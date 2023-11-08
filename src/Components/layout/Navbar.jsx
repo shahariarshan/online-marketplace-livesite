@@ -33,10 +33,18 @@ const Navbar = () => {
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
               <NavLink to='/' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm mr-2' : 'btn-sm btn-ghost'}>Home</NavLink>
-              <NavLink to='/addJob' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm mr-2' : 'btn-sm btn-ghost'}>Add Jobs</NavLink>
+              {
+                user?.email?<>
+                <NavLink to='/addJob' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm mr-2' : 'btn-sm btn-ghost'}>Add Jobs</NavLink>
               <NavLink to='/category' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>My Posted Jobs</NavLink>
               <NavLink to='/myBids' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>My Bids</NavLink>
               <NavLink  className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>Bid Request</NavLink>
+                </>:
+                 <Link to='/register'>
+                 <button className="btn btn-primary btn-sm  mr-2">Register</button>
+               </Link>
+
+              }
 
               {
                 user ?
@@ -62,7 +70,7 @@ const Navbar = () => {
               }
 
 
-              <NavLink to='/register' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>Register</NavLink>
+              {/* <NavLink to='/register' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>Register</NavLink> */}
 
             </ul>
           </div>
@@ -76,10 +84,19 @@ const Navbar = () => {
           {/* Sidebar content here */}
           <div className="flex flex-col gap-3 ">
             {/* Navbar menu content here */}
-            <NavLink to='/addJob' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm mr-2' : 'btn-sm btn-ghost'}>Add Jobs</NavLink>
-            <NavLink to='/category' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>My Posted Jobs</NavLink>
-            <NavLink className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>My Bids</NavLink>
-            <NavLink className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>Bid Request</NavLink>
+            <NavLink to='/' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm mr-2' : 'btn-sm btn-ghost'}>Home</NavLink>
+            {
+                user?.email?<>
+                <NavLink to='/addJob' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm mr-2' : 'btn-sm btn-ghost'}>Add Jobs</NavLink>
+              <NavLink to='/category' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>My Posted Jobs</NavLink>
+              <NavLink to='/myBids' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>My Bids</NavLink>
+              <NavLink  className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>Bid Request</NavLink>
+                </>:
+                 <Link to='/register'>
+                 <button className="btn btn-primary btn-sm  mr-2">Register</button>
+               </Link>
+
+              }
             {
               user ?
                 <>
@@ -98,10 +115,10 @@ const Navbar = () => {
                 </>
                 :
                 <Link to='/login'>
-                  <button className="btn  bg-green-600 text-white"> Login</button>
-                </Link>
+                 <button className="btn btn-primary btn-sm  mr-2">Log In </button>
+               </Link>
             }
-            <NavLink to='/register' className={({ isActive }) => isActive ? 'btn btn-primary btn-sm  mr-2' : 'btn-sm btn-ghost'}>Register</NavLink>
+           
 
           </div>
         </ul>
