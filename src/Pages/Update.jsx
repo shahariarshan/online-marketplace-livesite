@@ -101,14 +101,14 @@ const Update = () => {
                                 <label className="label">
                                 <span className="label-text">Select your Job Category</span>
                                 </label>
-                            {/* <select name="type" defaultValue={type} className="select select-bordered w-full ">
+                            <select name="type" defaultValue={type} className="select select-bordered w-full ">
                                 <option value={`Web Development`}>Web Development</option>
                                 <option value={`Digital Marketing`}>Digital Marketing</option>
                                 <option value={`Graphic Design`}>Graphic Design</option>
-                            </select> */}
-                           <label className="input-group">
+                            </select>
+                           {/* <label className="input-group">
                                 <input type="text" name="type" defaultValue={type}  className="input input-bordered w-full" />
-                            </label>
+                            </label> */}
                         </div>
 
 
