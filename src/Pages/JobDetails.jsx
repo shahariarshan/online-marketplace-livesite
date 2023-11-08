@@ -25,7 +25,7 @@ const JobDetails = () => {
 
         const updateCategory = { bemail,email,user, title,data,miniPrice,maxPrice}
         console.log(updateCategory)
-        fetch(`http://localhost:5000/placeBid`, {
+        fetch(`https://online-marketplace-server-side.vercel.app/placeBid`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

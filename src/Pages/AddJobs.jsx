@@ -28,7 +28,7 @@ const AddJobs = () => {
 
 
 
-        fetch('http://localhost:5000/allJobs', {
+        fetch('https://online-marketplace-server-side.vercel.app/allJobs', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

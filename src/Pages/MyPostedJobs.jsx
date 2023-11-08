@@ -27,7 +27,7 @@ const MyPostedJobs = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/allJobs/${_id}`, {
+                fetch(`https://online-marketplace-server-side.vercel.app/allJobs/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

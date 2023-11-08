@@ -34,27 +34,27 @@ const routes = createBrowserRouter([
             {
                 path: '/category/:category',
                 element: <Cards></Cards>,
-                loader: () => fetch('http://localhost:5000/allJobs')
+                loader: () => fetch('https://online-marketplace-server-side.vercel.app/allJobs')
             },
             {
                 path: '/category',
                 element: <PrivateRoute><MyPostedJobs></MyPostedJobs></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/allJobs')
+                loader: () => fetch('https://online-marketplace-server-side.vercel.app/allJobs')
             },
             {
                 path:'update/:id',
                 element:<Update></Update>,
-                loader:({params})=>fetch(`http://localhost:5000/allJobs/${params.id}`)
+                loader:({params})=>fetch(`https://online-marketplace-server-side.vercel.app/allJobs/${params.id}`)
             },
             {
                 path:'/jobDetails/:id',
                 element:<PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/allJobs/${params.id}`)
+                loader: ({params}) => fetch(`https://online-marketplace-server-side.vercel.app/allJobs/${params.id}`)
             },
             {
                 path:'/myBids',
                 element:<PrivateRoute><MyBids></MyBids></PrivateRoute>,
-                loader:()=>fetch('http://localhost:5000/placeBid')
+                loader:()=>fetch('https://online-marketplace-server-side.vercel.app/placeBid')
             }
 
 
